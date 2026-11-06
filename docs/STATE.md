@@ -15,7 +15,7 @@ Primo prototipo **Sospeso** implementato in Godot 4.6.3: sostegno a due piedi, s
 - Comandi in `docs/DEVELOPMENT.md`. Nessuna build nativa né prova su telefono eseguita.
 
 ## Ripresa
-0. Priorità attuale: provare dall'app Android senza installazioni. Build web pronta, vedi `docs/WEB_PREVIEW.md`. L’utente richiede il repository privato esistente. Sorgenti caricati su main, sito compilato su gh-pages. POST Pages rifiutato: HTTP 403 Resource not accessible by integration. Serve attivazione dall’account GitHub in Settings → Pages: Deploy from a branch, gh-pages, / (root), Save. Se il piano esclude Pages privati, GitHub mostrerà il requisito di upgrade; non cambiare visibilità senza richiesta.
+0. L'utente ha autorizzato di rendere pubblico temporaneamente il repository esistente per provare e poi toglierlo. PATCH private=false rifiutato con HTTP 403 Resource not accessible by integration; GET successivo conferma private=true, has_pages=false. Occorrono azioni dall'account proprietario: Settings → General → Danger Zone → Change visibility → Public; poi Settings → Pages → Deploy from branch → gh-pages / (root) → Save. Non richiedere di nuovo l'autorizzazione già data. Al termine della prova disattivare Pages e ripristinare private; anche queste azioni possono richiedere l'account proprietario se l'integrazione resta limitata.
 1. Aprire `project.godot` o usare `bash scripts/run-godot.sh` con un display disponibile.
 2. Raffinare il tempismo: ora la ricezione è assistita; il prototipo valida ciclo fisico e contatti.
 3. Calibrare prospettiva, ampiezza del lancio e animazione con il video. Grafica e fedeltà finale non sono ancora approvate.

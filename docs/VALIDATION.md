@@ -59,3 +59,5 @@ Un controllo documentale non dimostra che il gioco funzioni o che una release po
 - Sorgenti committati (iniziale 11c78b4) e push main riuscito. Sito compilato da 12 file/38.206.000 byte in commit separato 01d77403e67d95a9fed7cf91c6d61ec556b38859, push gh-pages riuscito. Indice temporaneo separato usato per il sito; checkout main conservato, nessun worktree o push forzato.
 - POST /repos/enricomatassini/codex-game-project/pages con build_type=legacy e source gh-pages /: HTTP 403 Resource not accessible by integration. Attivazione non eseguita. Richiesta azione del proprietario in Settings → Pages; nessun URL pubblico dichiarato attivo e nessuna inferenza sul piano.
 - Nessuna modifica di visibilità e nessun repository pubblico creato.
+
+- Dopo autorizzazione esplicita dell'utente alla prova pubblica temporanea, PATCH repository con private=false: HTTP 403 Resource not accessible by integration. GET successivo HTTP 200 conferma private=true, visibility=private e has_pages=false. Necessario cambio di visibilità e attivazione Pages dal proprietario; autorizzazione utente registrata, non va richiesta nuovamente.

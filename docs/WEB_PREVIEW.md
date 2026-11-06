@@ -30,3 +30,13 @@ Azione necessaria dall'account proprietario: aprire https://github.com/enricomat
 Dopo l'azione, verificare deployment, HTTPS e un lancio sul sito. L'accesso in scrittura ai contenuti Git non autorizza automaticamente le API Pages e non va aggirato estraendo token o avviando workflow con privilegi non disponibili.
 
 Il repository resta privato; un sito Pages personale normalmente è pubblico. Nessun link va presentato come attivo prima di verificarlo. L'app Android può aprire il sito nel browser integrato o in Chrome, secondo il client.
+
+## Autorizzazione aggiornata: prova pubblica temporanea
+
+L'utente ha poi autorizzato di rendere pubblico il repository esistente per provare, e rimuovere l'anteprima dopo. PATCH /repos/enricomatassini/codex-game-project con private=false: HTTP 403 Resource not accessible by integration. GET di verifica: private=true, visibility=private, has_pages=false. Il blocco è dell'integrazione GitHub, non dell'autorizzazione dell'utente né un rifiuto di sicurezza del tool.
+
+Azioni proprietario:
+1. https://github.com/enricomatassini/codex-game-project/settings → Danger Zone → Change repository visibility → Public.
+2. https://github.com/enricomatassini/codex-game-project/settings/pages → Deploy from a branch → gh-pages → / (root) → Save.
+
+Dopo la prova: disattivare Pages e rimettere il repository privato dalla stessa pagina General. Non eliminare sorgenti o repository: per “levarla” usare disattivazione del sito e ripristino della visibilità. Aspettare che l'utente segnali la fine della prova, senza inventare una scadenza. Nessuna modifica di visibilità o attivazione è stata completata dall'agente.
