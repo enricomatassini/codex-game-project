@@ -1,0 +1,9 @@
+{
+  "version": "4.6.3",
+  "release_url": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz",
+  "archive_sha512": "da606b61c10157844f8300172df374472665f95015495cb1a7cd132c40ede404faa96cc1016a4b9662db9909ddea69632c4948b2cd11163438dad4808881fb68",
+  "templates_sha256": {
+    "web_nothreads_debug.zip": "4a8a8ef7519637f7898fad25f09d3e466965e99c04e441682e1bc2d97a548922",
+    "web_nothreads_release.zip": "1446f79dc12f60ce5d244c39fb6628ec298337ca5c4f91a16491feea72aa1bc9"
+  }
+}

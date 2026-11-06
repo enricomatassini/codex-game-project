@@ -1,0 +1,11 @@
+.godot/
+.cache/
+build/
+*.tmp
+*.log
+.DS_Store
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
+export_credentials.cfg
