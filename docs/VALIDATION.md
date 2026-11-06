@@ -53,3 +53,9 @@ Un controllo documentale non dimostra che il gioco funzioni o che una release po
 - Chromium con viewport 393 × 873 e touch: caricamento WebGL2/Wasm riuscito, zero errori JavaScript, lancio tramite touch e contatore 01 verificato nella cattura. tests/web_smoke.cjs usa coordinate nel contenuto 9:16, comprese le bande, e chiude il browser anche in caso di errore. Screenshot e risultato JSON in build/.
 - Sito pronto in build/web, licenze Godot incluse, .nojekyll presente; archivio build/sospeso-web-ready.zip con 12 file, CRC verificato. Non è pubblicato né provato su Android fisico.
 - API GitHub in lettura: repository enricomatassini/codex-game-project privato, has_pages=false. Nessuna modifica remota. Proposta pubblicazione su repository pubblico separato da autorizzare.
+
+## 2026-11-06 — Caricamento nel repository privato richiesto
+- Lettura autenticata account/repository riuscita: account enricomatassini, repository private=true, admin/push=true; dettaglio piano non restituito. GET Pages: HTTP 403 Resource not accessible by integration.
+- Sorgenti committati (iniziale 11c78b4) e push main riuscito. Sito compilato da 12 file/38.206.000 byte in commit separato 01d77403e67d95a9fed7cf91c6d61ec556b38859, push gh-pages riuscito. Indice temporaneo separato usato per il sito; checkout main conservato, nessun worktree o push forzato.
+- POST /repos/enricomatassini/codex-game-project/pages con build_type=legacy e source gh-pages /: HTTP 403 Resource not accessible by integration. Attivazione non eseguita. Richiesta azione del proprietario in Settings → Pages; nessun URL pubblico dichiarato attivo e nessuna inferenza sul piano.
+- Nessuna modifica di visibilità e nessun repository pubblico creato.

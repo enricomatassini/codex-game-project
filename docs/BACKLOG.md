@@ -12,7 +12,7 @@
 | INPUT-01 | Tempismo e progressione difficoltà | Da fare | GAME-01 | Ricezione assistita confrontata con controllo temporizzato in playtest |
 | ART-01 | Calibrare prospettiva e gesti rispetto al video | Da fare | REF-01, PHYS-01 | Confronto di lancio/ricaduta, leggibilità e contatto su telefono |
 | WEB-01 | Versione web per prova senza installazione | Build pronta e testata nel browser | GAME-01 | Export Wasm e lancio touch verificati |
-| WEB-02 | Pubblicare un link HTTPS | Repository privato richiesto; attivazione Pages da verificare | WEB-01 | Pages attivo e lancio verificato sul sito; poi prova utente Android |
+| WEB-02 | Pubblicare un link HTTPS | Build su gh-pages; attivazione manuale richiesta, API 403 | WEB-01 | Pages attivo e lancio verificato sul sito; poi prova utente Android |
 | MOBILE-01 | Prima prova Android su dispositivo | Da fare | GAME-01 | Build installabile, touch e lifecycle verificati con evidenze |
 | IOS-01 | Configurare build macOS/iOS | Da fare | ENGINE-01 | Xcode, provisioning e build verificati su runner o Mac disponibile |
 

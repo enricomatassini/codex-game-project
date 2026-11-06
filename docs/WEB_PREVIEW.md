@@ -23,6 +23,10 @@ Test del runtime cloud: servire `build/web/` localmente e lanciare `node tests/w
 
 L'utente ha richiesto di usare il repository privato esistente enricomatassini/codex-game-project, senza crearne uno pubblico separato. L'integrazione ha permessi admin/push sui contenuti; GET Pages restituisce HTTP 403, Resource not accessible by integration. Questo non dimostra da solo un limite del piano dell'utente.
 
-Preparazione: main per i sorgenti e gh-pages per il solo sito compilato. Nessun cambio di visibilità. Dopo il caricamento provare l'attivazione Pages sulla root di gh-pages; se l'API resta bloccata, l'utente dovrà abilitarla in Settings → Pages. I piani gratuiti non includono Pages da repository privati; verificare l'esito del servizio o l'interfaccia senza assumere il piano.
+Caricamento completato: main contiene i sorgenti, gh-pages il sito compilato (12 file, 38.206.000 byte), commit web 01d77403e67d95a9fed7cf91c6d61ec556b38859. Push entrambi riusciti senza forzature; repository sempre privato. POST Pages con build_type legacy e source gh-pages / rifiutato con HTTP 403 Resource not accessible by integration. Non è una conferma del piano dell'utente.
+
+Azione necessaria dall'account proprietario: aprire https://github.com/enricomatassini/codex-game-project/settings/pages e selezionare Source: Deploy from a branch, branch: gh-pages, cartella: / (root), quindi Save. Se l'interfaccia richiede upgrade per repository privati, resta un requisito del piano: non rendere pubblico il repository senza una nuova istruzione.
+
+Dopo l'azione, verificare deployment, HTTPS e un lancio sul sito. L'accesso in scrittura ai contenuti Git non autorizza automaticamente le API Pages e non va aggirato estraendo token o avviando workflow con privilegi non disponibili.
 
 Il repository resta privato; un sito Pages personale normalmente è pubblico. Nessun link va presentato come attivo prima di verificarlo. L'app Android può aprire il sito nel browser integrato o in Chrome, secondo il client.

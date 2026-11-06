@@ -15,7 +15,7 @@ Primo prototipo **Sospeso** implementato in Godot 4.6.3: sostegno a due piedi, s
 - Comandi in `docs/DEVELOPMENT.md`. Nessuna build nativa né prova su telefono eseguita.
 
 ## Ripresa
-0. Priorità attuale: provare dall'app Android senza installazioni. Build web pronta, vedi `docs/WEB_PREVIEW.md`. L’utente richiede di usare il repository privato esistente. Caricamento su main e gh-pages in preparazione; API Pages restituisce 403 Resource not accessible by integration. Nessun nuovo repository o cambio di visibilità autorizzato.
+0. Priorità attuale: provare dall'app Android senza installazioni. Build web pronta, vedi `docs/WEB_PREVIEW.md`. L’utente richiede il repository privato esistente. Sorgenti caricati su main, sito compilato su gh-pages. POST Pages rifiutato: HTTP 403 Resource not accessible by integration. Serve attivazione dall’account GitHub in Settings → Pages: Deploy from a branch, gh-pages, / (root), Save. Se il piano esclude Pages privati, GitHub mostrerà il requisito di upgrade; non cambiare visibilità senza richiesta.
 1. Aprire `project.godot` o usare `bash scripts/run-godot.sh` con un display disponibile.
 2. Raffinare il tempismo: ora la ricezione è assistita; il prototipo valida ciclo fisico e contatti.
 3. Calibrare prospettiva, ampiezza del lancio e animazione con il video. Grafica e fedeltà finale non sono ancora approvate.
@@ -25,4 +25,4 @@ Primo prototipo **Sospeso** implementato in Godot 4.6.3: sostegno a due piedi, s
 Nessun lavoro parallelo da integrare. Agente fisica: rig e test; visuale: mesh/IK e posa; UI: HUD e controlli. Coordinatore: integrazione, verifiche, cattura e documentazione.
 
 ## Persistenza
-Modifiche ancora locali, senza commit/push GitHub. Conservare snapshot o pacchetto sorgenti prima di cambiare macchina. I processi del display non sopravvivono necessariamente alla pubblicazione. Bozza cloud aggiornata con install_script e start_skill del prototipo; salvataggio confermato. Rivedere e salvare le impostazioni, poi pubblicare lo snapshot nell’interfaccia. Pubblicazione e ripristino in un nuovo task non verificati.
+Sorgenti committati e inviati al repository privato su main; build web su gh-pages. L’attivazione Pages è bloccata dai permessi dell’integrazione, non dal caricamento Git. Conservare lo snapshot per cache e toolchain. I processi del display non sopravvivono necessariamente alla pubblicazione. Bozza cloud aggiornata con install_script e start_skill del prototipo; salvataggio confermato. Rivedere e salvare le impostazioni, poi pubblicare lo snapshot nell’interfaccia. Pubblicazione e ripristino in un nuovo task non verificati.
