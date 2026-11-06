@@ -61,3 +61,10 @@ Un controllo documentale non dimostra che il gioco funzioni o che una release po
 - Nessuna modifica di visibilità e nessun repository pubblico creato.
 
 - Dopo autorizzazione esplicita dell'utente alla prova pubblica temporanea, PATCH repository con private=false: HTTP 403 Resource not accessible by integration. GET successivo HTTP 200 conferma private=true, visibility=private e has_pages=false. Necessario cambio di visibilità e attivazione Pages dal proprietario; autorizzazione utente registrata, non va richiesta nuovamente.
+
+## 2026-11-06 — Anteprima pubblica attiva
+- Utente ha confermato il cambio a pubblico e l'attivazione Pages; API verifica private=false, has_pages=true, source gh-pages /, HTTPS enforced.
+- Workflow pages build and deployment 42226590864: completed/success sul commit web 01d77403e67d95a9fed7cf91c6d61ec556b38859. Il primo deployment ha richiesto attesa; i 404 precedenti non erano una build fallita.
+- https://enricomatassini.github.io/codex-game-project/ restituisce HTTP 200 con loader Godot; index.wasm HTTP 200 con application/wasm.
+- Test Playwright sul sito pubblico: exit 0, caricamento completo, un tocco LANCIA, contatore 01 verificato visivamente, nessun errore JavaScript. Evidenze build/web-live-browser-result.json e web-live-after-touch.png. Verifica Android fisica lasciata all'utente.
+- Alla fine della prova l'utente vuole rimuovere l'anteprima e ripristinare il repository privato; nessuna chiusura automatica anticipata.

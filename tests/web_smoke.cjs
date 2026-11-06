@@ -3,9 +3,13 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 
 (async () => {
+  const target = process.argv[2] || 'http://127.0.0.1:8765/';
+  const remote = !['127.0.0.1', 'localhost'].includes(new URL(target).hostname);
+  const prefix = remote ? 'web-live' : 'web';
   const browser = await chromium.launch({
     executablePath: '/usr/bin/chromium', headless: true,
     args: ['--no-sandbox', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'],
+    proxy: remote && process.env.HTTPS_PROXY ? { server: process.env.HTTPS_PROXY } : undefined,
   });
   const errors = [];
   try {
@@ -18,12 +22,12 @@ const fs = require('fs');
       if (message.type() === 'error') errors.push(message.text());
     });
     page.on('pageerror', error => errors.push(error.message));
-    await page.goto(process.argv[2] || 'http://127.0.0.1:8765/', {
+    await page.goto(target, {
       waitUntil: 'networkidle', timeout: 60000,
     });
     await page.waitForFunction(() => !document.getElementById('status') &&
       document.querySelector('canvas')?.width > 0, null, { timeout: 60000 });
-    const before = await page.screenshot({ path: 'build/web-ready.png' });
+    const before = await page.screenshot({ path: `build/${prefix}-ready.png` });
     const canvas = await page.locator('canvas').boundingBox();
     if (!canvas || canvas.width < 300 || canvas.height < 500) throw Error('Game canvas not visible');
     // One native touch on the primary launch control, then inspect the result frame.
@@ -32,10 +36,10 @@ const fs = require('fs');
     const top = canvas.y + (canvas.height - contentHeight) / 2;
     await page.touchscreen.tap(canvas.x + canvas.width * 0.5, top + contentHeight * 0.885);
     await page.waitForTimeout(2800);
-    const after = await page.screenshot({ path: 'build/web-after-touch.png' });
+    const after = await page.screenshot({ path: `build/${prefix}-after-touch.png` });
     if (before.equals(after)) throw Error('Touch did not change the rendered game');
-    const result = { canvas, javascriptErrors: errors, touchInjected: true };
-    fs.writeFileSync('build/web-browser-result.json', JSON.stringify(result, null, 2) + '\n');
+    const result = { url: target, canvas, javascriptErrors: errors, touchInjected: true };
+    fs.writeFileSync(`build/${prefix}-browser-result.json`, JSON.stringify(result, null, 2) + '\n');
     if (errors.length) throw Error(errors.join('\n'));
     console.log('Web build loaded, touch dispatched, screenshots captured; no JavaScript errors.');
   } finally {

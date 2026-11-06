@@ -2,6 +2,8 @@
 
 Primo prototipo in **Godot 4.6.3**: sostieni un tavolo con i piedi, lancialo e accompagnane la ricaduta. Destinazioni previste: iOS e Android.
 
+[Gioca dal telefono senza installazione](https://enricomatassini.github.io/codex-game-project/) — anteprima pubblica temporanea.
+
 ## Avvio e controlli
 
 Apri `project.godot` con Godot 4.6.3 e premi F5. Da terminale, con Godot nel PATH e un display disponibile:
